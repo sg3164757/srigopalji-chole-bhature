@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="hi-EN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Gopal Ji Cholle Bhature & Fast Food | Authentic Delhi Taste</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Outfit for modern Indian food branding -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            amber: '#F59E0B',
+                            saffron: '#EA580C',
+                            red: '#DC2626',
+                            dark: '#18181B',
+                            charcoal: '#27272A',
+                            cream: '#FFFBEB',
+                            cardBg: '#212124'
+                        },
+                        swiggy: '#FC8019',
+                        zomato: '#CB202D',
+                        whatsapp: '#25D366'
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow': '0 10px 30px -10px rgba(234, 88, 12, 0.4)',
+                        'glow-zomato': '0 10px 25px -8px rgba(203, 32, 45, 0.45)',
+                        'glow-swiggy': '0 10px 25px -8px rgba(252, 128, 25, 0.45)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .bhature-gradient {
+            background: linear-gradient(135deg, #18181b 0%, #291a0c 50%, #18181b 100%);
+        }
+        .text-gradient-amber {
+            background: linear-gradient(to right, #F59E0B, #EA580C, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-saffron selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-red via-brand-saffron to-amber-500 text-white text-xs md:text-sm font-semibold py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+        <span class="animate-pulse">🔥</span>
+        <span>Delhi's Craziest & Crispiest Cholle Bhature! Order on Swiggy & Zomato or Pickup Direct!</span>
+        <span class="hidden sm:inline">| ⏰ 7:30 AM - 10:30 PM</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-zinc-800/80 transition-all duration-200 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-saffron to-amber-400 p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-brand-dark rounded-[14px] flex items-center justify-center">
+                        <i class="fa-solid fa-utensils text-brand-amber text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-heading font-extrabold text-xl sm:text-2xl leading-tight tracking-tight text-white flex items-center gap-1.5">
+                        Sri Gopal Ji <span class="text-brand-saffron text-sm bg-brand-saffron/10 border border-brand-saffron/30 px-1.5 py-0.5 rounded-md font-bold">FOODS</span>
+                    </h1>
+                    <p class="text-xs text-zinc-400 font-medium tracking-wider">CHOLLE BHATURE & FAST FOOD</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm text-zinc-300">
+                <a href="#menu" class="hover:text-brand-amber transition-colors">Menu Specials</a>
+                <a href="#delivery" class="hover:text-brand-amber transition-colors">Order Online</a>
+                <a href="#about" class="hover:text-brand-amber transition-colors">Why Us</a>
+                <a href="#reviews" class="hover:text-brand-amber transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-brand-amber transition-colors">Find Us</a>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Cart Button -->
+                <button onclick="toggleCartDrawer()" class="relative p-2.5 sm:px-4 sm:py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl border border-zinc-700 font-medium text-sm flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-basket-shopping text-brand-amber"></i>
+                    <span class="hidden sm:inline">My Plate</span>
+                    <span id="cart-badge-count" class="bg-brand-red text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+                </button>
+
+                <!-- Phone Call Direct -->
+                <a href="tel:+919876543210" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-brand-saffron to-amber-500 hover:from-brand-red hover:to-brand-saffron text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-glow transition-all duration-300">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button onclick="toggleMobileNav()" class="lg:hidden text-zinc-300 p-2 text-xl hover:text-white" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-nav" class="hidden lg:hidden border-t border-zinc-800 bg-brand-charcoal/95 px-5 py-4 space-y-3">
+            <a href="#menu" onclick="toggleMobileNav()" class="block text-zinc-200 py-1 font-medium hover:text-brand-amber">Menu & Order</a>
+            <a href="#delivery" onclick="toggleMobileNav()" class="block text-zinc-200 py-1 font-medium hover:text-brand-amber">Swiggy & Zomato Delivery</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block text-zinc-200 py-1 font-medium hover:text-brand-amber">Specialty & Hygiene</a>
+            <a href="#reviews" onclick="toggleMobileNav()" class="block text-zinc-200 py-1 font-medium hover:text-brand-amber">Customer Reviews</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block text-zinc-200 py-1 font-medium hover:text-brand-amber">Shop Address & Hours</a>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden bhature-gradient border-b border-zinc-800">
+        <!-- Ambient decorative lights -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-saffron/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-32 w-96 h-96 bg-brand-amber/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-brand-amber font-semibold text-xs sm:text-sm px-3.5 py-1.5 rounded-full">
+                        <i class="fa-solid fa-award text-sm"></i>
+                        <span>Old Delhi's Famous Pindi Chana & Paneer Bhature</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.15] text-white">
+                        Crispy, Fluffy & Spicy <br>
+                        <span class="text-gradient-amber">Sri Gopal Ji Taste!</span>
+                    </h1>
+
+                    <p class="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Savor the authentic taste of piping hot paneer-stuffed bhature paired with rich, aromatic pindi cholle, tangy aloo masala, spicy green chillies, and special creamy sweet lassi.
+                    </p>
+
+                    <!-- Primary Food Ordering CTAs with Zomato & Swiggy -->
+                    <div class="pt-2 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <!-- Zomato Button -->
+                        <a href="https://www.zomato.com" target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-zomato hover:bg-red-700 text-white font-heading font-bold text-base px-6 py-3.5 rounded-2xl shadow-glow-zomato transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Order on Zomato</span>
+                        </a>
+
+                        <!-- Swiggy Button -->
+                        <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-swiggy hover:bg-orange-600 text-white font-heading font-bold text-base px-6 py-3.5 rounded-2xl shadow-glow-swiggy transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fa-solid fa-motorcycle"></i>
+                            <span>Order on Swiggy</span>
+                        </a>
+
+                        <!-- View Menu -->
+                        <a href="#menu" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-heading font-semibold text-base px-6 py-3.5 rounded-2xl transition-all">
+                            <i class="fa-solid fa-book-open text-brand-amber"></i>
+                            <span>Explore Menu</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-zinc-300">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+                            <span>100% Pure Desi Ghee / Refined</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-heart text-brand-amber"></i>
+                            <span>Hygienic Preparation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card / Visual Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-gradient-to-br from-zinc-800/90 to-zinc-900/90 border border-zinc-700 rounded-3xl p-5 shadow-2xl backdrop-blur-sm">
+                        <!-- Best Seller Tag -->
+                        <div class="absolute -top-3.5 right-6 bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                            <i class="fa-solid fa-fire"></i> Best Seller Plate
+                        </div>
+
+                        <!-- Featured Image with Fallback -->
+                        <div class="relative overflow-hidden rounded-2xl bg-zinc-950 aspect-[4/3]">
+                            <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Special Cholle Bhature Plate"
+                                 onerror="this.src='https://placehold.co/700x500/27272A/F59E0B?text=Sri+Gopal+Ji+Special+Cholle+Bhature'"
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                                <div>
+                                    <p class="text-white font-bold text-lg leading-snug">Special Paneer Cholle Bhature (2 Pcs)</p>
+                                    <p class="text-brand-amber text-xs">Served with Pindi Chana, Aloo Masala, Pickle & Onions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Quick Order Bar -->
+                        <div class="mt-4 pt-3 border-t border-zinc-700/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-zinc-400 block font-medium">Combo Price</span>
+                                <span class="text-2xl font-black text-brand-amber">₹120 <span class="text-xs text-zinc-400 font-normal">/ Full Plate</span></span>
+                            </div>
+                            <button onclick="addToCart('Special Paneer Cholle Bhature', 120, 'Chole Bhature')" class="bg-brand-saffron hover:bg-brand-red text-white px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-md transition-all active:scale-95">
+                                <i class="fa-solid fa-plus"></i> Add to Plate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="delivery" class="py-12 bg-zinc-900/60 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-amber text-sm font-bold tracking-widest uppercase">Lightning Fast Delivery</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-1">Connect & Order From Your Favorite App</h2>
+                <p class="text-zinc-400 text-sm mt-2">Get hot, crispy bhature delivered right to your home or office in under 30 minutes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                
+                <!-- Zomato Card -->
+                <div class="bg-brand-cardBg border border-zinc-800 hover:border-zomato/60 rounded-2xl p-6 flex flex-col justify-between items-center text-center transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+                    <div class="w-16 h-16 rounded-2xl bg-zomato/15 flex items-center justify-center text-zomato text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-white">Order on Zomato</h3>
+                        <p class="text-xs text-zinc-400 mt-1.5 mb-5">Enjoy live tracking, coupon discounts & ratings on Zomato app.</p>
+                    </div>
+                    <!-- Replace href with actual Zomato restaurant link -->
+                    <a href="https://www.zomato.com" target="_blank" rel="noopener noreferrer" 
+                       class="w-full py-3 bg-zomato hover:bg-red-700 text-white text-sm font-bold rounded-xl transition-all shadow-glow-zomato flex items-center justify-center gap-2">
+                        <span>Open Zomato Store</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Swiggy Card -->
+                <div class="bg-brand-cardBg border border-zinc-800 hover:border-swiggy/60 rounded-2xl p-6 flex flex-col justify-between items-center text-center transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+                    <div class="w-16 h-16 rounded-2xl bg-swiggy/15 flex items-center justify-center text-swiggy text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-person-biking"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-white">Order on Swiggy</h3>
+                        <p class="text-xs text-zinc-400 mt-1.5 mb-5">Superfast Swiggy delivery with live updates & super saver offers.</p>
+                    </div>
+                    <!-- Replace href with actual Swiggy restaurant link -->
+                    <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer" 
+                       class="w-full py-3 bg-swiggy hover:bg-orange-600 text-white text-sm font-bold rounded-xl transition-all shadow-glow-swiggy flex items-center justify-center gap-2">
+                        <span>Open Swiggy Store</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Direct WhatsApp / Pickup Card -->
+                <div class="bg-brand-cardBg border border-zinc-800 hover:border-whatsapp/60 rounded-2xl p-6 flex flex-col justify-between items-center text-center transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+                    <div class="w-16 h-16 rounded-2xl bg-whatsapp/15 flex items-center justify-center text-whatsapp text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-white">Direct WhatsApp Order</h3>
+                        <p class="text-xs text-zinc-400 mt-1.5 mb-5">Direct counter takeaway or bulk party orders with zero commission.</p>
+                    </div>
+                    <button onclick="toggleCartDrawer()" 
+                            class="w-full py-3 bg-whatsapp hover:bg-emerald-600 text-white text-sm font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                        <span>Build Plate & Send</span>
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+                <span class="text-brand-amber font-bold text-sm uppercase tracking-widest">Our Fresh Menu</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-1">Garma-Garam Specialties</h2>
+                <p class="text-zinc-400 text-sm mt-1.5">Prepared fresh with pure hygiene, hand-ground spices & top quality ingredients.</p>
+            </div>
+
+            <!-- Menu Category Filter Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar" id="category-pills">
+                <button onclick="filterCategory('all')" data-cat="all" class="cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-brand-saffron text-white transition-all shadow-md">
+                    All Items
+                </button>
+                <button onclick="filterCategory('chollebhature')" data-cat="chollebhature" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-zinc-800 text-zinc-300 hover:text-white transition-all">
+                    Cholle Bhature
+                </button>
+                <button onclick="filterCategory('fastfood')" data-cat="fastfood" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-zinc-800 text-zinc-300 hover:text-white transition-all">
+                    Fast Food & Chaat
+                </button>
+                <button onclick="filterCategory('beverages')" data-cat="beverages" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-zinc-800 text-zinc-300 hover:text-white transition-all">
+                    Lassi & Drinks
+                </button>
+                <button onclick="filterCategory('combos')" data-cat="combos" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-zinc-800 text-zinc-300 hover:text-white transition-all">
+                    Thali & Combos
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Items Grid Container -->
+        <div id="menu-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Items rendered dynamically via JavaScript for easy editing & interactive cart integration -->
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-zinc-900/80 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="space-y-6">
+                    <span class="text-brand-amber text-sm font-bold tracking-widest uppercase">The Heritage of Taste</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-black text-white">Why Sri Gopal Ji Cholle Bhature are Delhi's Favourite?</h2>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        At <span class="text-white font-semibold">Sri Gopal Ji Cholle Bhature & Fast Food</span>, we believe good food touches the soul. We slow-cook our Amritsari and Pindi Chana overnight with secret dry roasted spices, anardana, and zero artificial colors.
+                    </p>
+
+                    <!-- Quality Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60">
+                            <i class="fa-solid fa-seedling text-brand-amber text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-base">Fresh Secret Spices</h4>
+                            <p class="text-xs text-zinc-400 mt-1">Authentic hand-ground garam masalas and dried pomegranate seeds.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60">
+                            <i class="fa-solid fa-temperature-arrow-up text-brand-saffron text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-base">Crisp & Fluffy Bhature</h4>
+                            <p class="text-xs text-zinc-400 mt-1">Light paneer stuffed bhaturas fried golden in clean, regulated oil.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60">
+                            <i class="fa-solid fa-droplet text-blue-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-base">Kulhad Malai Lassi</h4>
+                            <p class="text-xs text-zinc-400 mt-1">Rich, chilled, frothy curd churned with rose essence and dry fruits.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60">
+                            <i class="fa-solid fa-sparkles text-emerald-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-base">100% Hygiene Standard</h4>
+                            <p class="text-xs text-zinc-400 mt-1">Clean open-kitchen hygiene, sanitized staff & food-grade packaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Banner -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-700 aspect-[4/3] bg-zinc-950">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" 
+                             alt="Traditional Indian Street Food Preparation"
+                             onerror="this.src='https://placehold.co/800x600/27272A/EA580C?text=Sri+Gopal+Ji+Food+Kitchen'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="bg-brand-dark/90 backdrop-blur-md p-4 rounded-2xl border border-zinc-700 inline-block max-w-xs">
+                                <div class="flex items-center gap-2 text-brand-amber font-bold text-xl">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <span class="text-white text-base ml-1">4.8 / 5</span>
+                                </div>
+                                <p class="text-xs text-zinc-300 mt-1">Trusted by 10,000+ local foodies across Swiggy, Zomato & Dine-in.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="text-brand-amber font-bold text-sm uppercase tracking-widest">Happy Foodies</span>
+            <h2 class="text-3xl font-heading font-black text-white mt-1">Words from Our Cholle Bhature Lovers</h2>
+            <p class="text-zinc-400 text-sm mt-2">Real feedback from daily food lovers and regular online diners.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Review 1 -->
+            <div class="bg-brand-cardBg border border-zinc-800 p-6 rounded-2xl relative shadow-md">
+                <div class="text-brand-amber text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                    "Sri Gopal Ji Cholle Bhature is unmatched! The bhature are fluffy without being too oily, and the paneer stuffing adds a royal crunch. Ordered via Zomato, arrived boiling hot!"
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-saffron/20 text-brand-saffron font-bold flex items-center justify-center">
+                        RG
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm font-bold">Rohit Gupta</h4>
+                        <span class="text-xs text-zinc-500">Verified Swiggy Customer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-brand-cardBg border border-zinc-800 p-6 rounded-2xl relative shadow-md">
+                <div class="text-brand-amber text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                    "Their Pindi Chana taste reminds me of traditional Chandni Chowk! The methi aloo and carrot pickle complement the spicy chole perfectly. Don't miss their Sweet Malai Lassi."
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-500/20 text-brand-amber font-bold flex items-center justify-center">
+                        PS
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm font-bold">Pooja Sharma</h4>
+                        <span class="text-xs text-zinc-500">Sunday Family Brunch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-brand-cardBg border border-zinc-800 p-6 rounded-2xl relative shadow-md">
+                <div class="text-brand-amber text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                    "Super quick delivery through Swiggy! Packed with foil to keep bhature crispy. Chowmein and Pav Bhaji in evening fast-food are also top-tier!"
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 font-bold flex items-center justify-center">
+                        AK
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm font-bold">Amit Kumar</h4>
+                        <span class="text-xs text-zinc-500">Zomato Gold Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-zinc-900/60 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-amber font-bold text-sm uppercase tracking-widest">Visit or Contact Us</span>
+                    <h2 class="text-3xl font-heading font-black text-white">Find Sri Gopal Ji Foods</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cardBg border border-zinc-800">
+                            <div class="w-10 h-10 rounded-xl bg-brand-saffron/15 text-brand-saffron flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Our Outlet Address</h4>
+                                <p class="text-xs text-zinc-400 mt-1">Shop No. 12, Main Market, Near Metro Station, Delhi, India</p>
+                                <span class="inline-block mt-2 text-xs font-semibold text-brand-amber underline cursor-pointer">
+                                    Get Directions on Google Maps
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cardBg border border-zinc-800">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-brand-amber flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Opening Hours</h4>
+                                <p class="text-xs text-zinc-400 mt-1">Monday - Sunday: 7:30 AM - 10:30 PM</p>
+                                <p class="text-[11px] text-emerald-400 font-medium mt-0.5">Hot Cholle Bhature available from 7:30 AM onwards!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cardBg border border-zinc-800">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Call for Orders & Catering</h4>
+                                <p class="text-xs text-zinc-400 mt-1">+91 98765 43210 / +91 91234 56789</p>
+                                <a href="tel:+919876543210" class="inline-block mt-2 text-xs font-semibold text-emerald-400 hover:underline">
+                                    Tap to Call Right Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Map Placeholder / Interactive Locator -->
+                <div class="lg:col-span-7 bg-brand-cardBg border border-zinc-800 rounded-3xl p-4 sm:p-6 shadow-xl">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-heading font-bold text-white text-base">Live Google Map & Outlet Location</span>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full font-semibold">Open Now</span>
+                    </div>
+                    
+                    <div class="relative w-full h-80 rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800 flex items-center justify-center text-center p-6">
+                        <!-- Embedded or Fallback Map Container -->
+                        <div class="space-y-3">
+                            <div class="w-16 h-16 rounded-full bg-brand-saffron/20 text-brand-saffron mx-auto flex items-center justify-center text-2xl animate-bounce">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-lg">Sri Gopal Ji Cholle Bhature & Fast Food</h3>
+                            <p class="text-xs text-zinc-400 max-w-sm mx-auto">
+                                Centrally located with easy parking & quick takeaways. Ready on Zomato & Swiggy for delivery.
+                            </p>
+                            <div class="pt-2 flex justify-center gap-3">
+                                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-brand-saffron hover:bg-brand-red text-white text-xs font-bold rounded-xl transition-all shadow-md">
+                                    Open in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-zinc-800 text-zinc-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-800">
+                <div class="text-center md:text-left">
+                    <h3 class="font-heading font-extrabold text-xl text-white">Sri Gopal Ji Cholle Bhature & Fast Food</h3>
+                    <p class="text-zinc-500 text-xs mt-1">Authentic North Indian taste & mouth-watering snacks.</p>
+                </div>
+
+                <div class="flex items-center gap-4 text-sm">
+                    <a href="https://www.zomato.com" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 hover:bg-zomato hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </a>
+                    <a href="https://www.swiggy.com" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 hover:bg-swiggy hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </a>
+                    <a href="https://wa.me/919876543210" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 hover:bg-whatsapp hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:+919876543210" class="w-10 h-10 rounded-full bg-zinc-900 hover:bg-brand-saffron hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <p>© 2026 Sri Gopal Ji Cholle Bhature & Fast Food. All Rights Reserved.</p>
+                <p class="text-zinc-500">Owner Links: Update Zomato & Swiggy URLs directly in the code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <!-- Backdrop -->
+        <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"></div>
+
+        <!-- Drawer Content Panel -->
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
+            <div class="w-screen max-w-md bg-brand-cardBg border-l border-zinc-800 shadow-2xl flex flex-col">
+                
+                <!-- Drawer Header -->
+                <div class="p-5 border-b border-zinc-800 flex items-center justify-between bg-zinc-900">
+                    <div class="flex items-center gap-2">
+                        <div class="w-9 h-9 rounded-xl bg-brand-amber/15 text-brand-amber flex items-center justify-center">
+                            <i class="fa-solid fa-plate-wheat text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-white text-lg">Your Plate / Order</h3>
+                            <p class="text-xs text-zinc-400">Order directly to shop via WhatsApp</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-zinc-400 hover:text-white p-2 text-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Items List -->
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+                    <!-- Dynamic items rendered here -->
+                </div>
+
+                <!-- Drawer Footer & Action -->
+                <div class="p-5 border-t border-zinc-800 bg-zinc-900/90 space-y-3">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-zinc-400">Subtotal</span>
+                        <span id="cart-subtotal" class="font-bold text-white text-lg">₹0</span>
+                    </div>
+                    <div class="text-[11px] text-zinc-400">
+                        * Packaging / Delivery calculated upon confirmation via WhatsApp.
+                    </div>
+
+                    <!-- Checkout via WhatsApp -->
+                    <button onclick="checkoutWhatsApp()" class="w-full py-3.5 bg-whatsapp hover:bg-emerald-600 text-white font-heading font-bold text-sm rounded-xl flex items-center justify-center gap-2.5 shadow-lg transition-transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Send Order on WhatsApp</span>
+                    </button>
+
+                    <!-- Or Order from Platforms -->
+                    <div class="grid grid-cols-2 gap-2 pt-1">
+                        <a href="https://www.zomato.com" target="_blank" class="py-2.5 bg-zomato/20 hover:bg-zomato/30 text-red-400 border border-zomato/40 text-xs font-bold rounded-xl text-center">
+                            Zomato
+                        </a>
+                        <a href="https://www.swiggy.com" target="_blank" class="py-2.5 bg-swiggy/20 hover:bg-swiggy/30 text-orange-400 border border-swiggy/40 text-xs font-bold rounded-xl text-center">
+                            Swiggy
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 px-3 py-2 flex items-center justify-around shadow-2xl">
+        <a href="tel:+919876543210" class="flex flex-col items-center text-zinc-300 hover:text-brand-amber">
+            <i class="fa-solid fa-phone text-base"></i>
+            <span class="text-[10px] font-medium mt-0.5">Call</span>
+        </a>
+        <a href="https://www.zomato.com" target="_blank" class="flex flex-col items-center text-zomato">
+            <i class="fa-solid fa-bowl-food text-base"></i>
+            <span class="text-[10px] font-bold mt-0.5">Zomato</span>
+        </a>
+        <a href="https://www.swiggy.com" target="_blank" class="flex flex-col items-center text-swiggy">
+            <i class="fa-solid fa-motorcycle text-base"></i>
+            <span class="text-[10px] font-bold mt-0.5">Swiggy</span>
+        </a>
+        <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-brand-amber relative">
+            <i class="fa-solid fa-basket-shopping text-base"></i>
+            <span class="text-[10px] font-semibold mt-0.5">Plate (<span id="mobile-cart-badge">0</span>)</span>
+        </button>
+    </div>
+
+    <script>
+        // Restaurant Configuration Details (Easily customizable by owner)
+        const RESTAURANT_CONFIG = {
+            name: "Sri Gopal Ji Cholle Bhature & Fast Food",
+            phone: "+919876543210",
+            whatsappNumber: "919876543210", // With country code, without '+'
+            zomatoUrl: "https://www.zomato.com",
+            swiggyUrl: "https://www.swiggy.com"
+        };
+
+        // Menu Data Store
+        const menuItems = [
+            {
+                id: "cb-1",
+                name: "Special Paneer Cholle Bhature",
+                category: "chollebhature",
+                price: 120,
+                spice: "Medium Spicy",
+                rating: "4.9",
+                badge: "Bestseller",
+                description: "2 Fluffy golden paneer-stuffed bhature with classic Amritsari spicy chole, tangy aloo, fried green chili and pickles.",
+                image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "cb-2",
+                name: "Classic Delhi Cholle Bhature",
+                category: "chollebhature",
+                price: 100,
+                spice: "Medium Spicy",
+                rating: "4.8",
+                badge: "Popular",
+                description: "Traditional Delhi style bhature paired with rich slow-simmered pindi cholle, sliced onions, and imli ki chutney.",
+                image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "cb-3",
+                name: "Extra Bhatura (Single Pc)",
+                category: "chollebhature",
+                price: 45,
+                spice: "Mild",
+                rating: "4.7",
+                badge: null,
+                description: "Piping hot, freshly fried soft and crispy single bhatura with mild paneer stuffing.",
+                image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "ff-1",
+                name: "Desi Ghee Pav Bhaji",
+                category: "fastfood",
+                price: 110,
+                spice: "Spicy",
+                rating: "4.8",
+                badge: "Chef Special",
+                description: "Mashed vegetable bhaji cooked on tawa with secret spices, topped with generous desi butter, served with 2 buttery pavs.",
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "ff-2",
+                name: "Delhi Veg Hakka Chowmein",
+                category: "fastfood",
+                price: 90,
+                spice: "Medium Spicy",
+                rating: "4.7",
+                badge: "Evening Hit",
+                description: "Street-style wok-tossed noodles loaded with fresh cabbage, capsicum, carrots, and spicy chilly garlic sauce.",
+                image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "ff-3",
+                name: "Crispy Paneer Burger",
+                category: "fastfood",
+                price: 70,
+                spice: "Mild",
+                rating: "4.6",
+                badge: null,
+                description: "Golden fried crispy patty topped with paneer slice, fresh veggies, tangy tandoori mayo in toasted sesame buns.",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "ff-4",
+                name: "Dahi Bhalla Papdi Chaat",
+                category: "fastfood",
+                price: 80,
+                spice: "Sweet & Tangy",
+                rating: "4.9",
+                badge: "Must Try",
+                description: "Soft lentil dumplings soaked in creamy sweet yogurt, topped with crispy papdi, roasted cumin, and saunth.",
+                image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "bv-1",
+                name: "Special Malai Lassi (Sweet Kulhad)",
+                category: "beverages",
+                price: 60,
+                spice: "Sweet",
+                rating: "5.0",
+                badge: "Super Hit",
+                description: "Thick hand-churned punjabi curd topped with thick malai layer, dry fruit slivers and aromatic rose water.",
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "bv-2",
+                name: "Masala Jeera Chaach (Buttermilk)",
+                category: "beverages",
+                price: 30,
+                spice: "Digestive",
+                rating: "4.8",
+                badge: null,
+                description: "Refreshing spiced churned buttermilk infused with roasted jeera, mint, black salt, and coriander.",
+                image: "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "cm-1",
+                name: "Royal Maharaja Combo",
+                category: "combos",
+                price: 180,
+                spice: "Medium Spicy",
+                rating: "4.9",
+                badge: "Best Value",
+                description: "2 Special Paneer Bhature + 1 Sweet Malai Lassi + Extra Tangy Aloo & Salad bowl.",
+                image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: "cm-2",
+                name: "Street Fast Food Combo",
+                category: "combos",
+                price: 150,
+                spice: "Spicy",
+                rating: "4.7",
+                badge: "Combo Deal",
+                description: "1 Plate Veg Chowmein + 1 Butter Pav Bhaji + Chilled Soft Drink bottle.",
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=500&q=80"
+            }
+        ];
+
+        // Application State
+        let cart = {};
+
+        // Render Menu Items
+        function renderMenu(filter = 'all') {
+            const container = document.getElementById('menu-container');
+            container.innerHTML = '';
+
+            const itemsToRender = filter === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === filter);
+
+            if (itemsToRender.length === 0) {
+                container.innerHTML = `<div class="col-span-full py-10 text-center text-zinc-400">No items found in this section.</div>`;
+                return;
+            }
+
+            itemsToRender.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-brand-cardBg border border-zinc-800 hover:border-zinc-700 rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 shadow-md hover:-translate-y-1";
+                
+                card.innerHTML = `
+                    <div>
+                        <!-- Item Image with Badge -->
+                        <div class="relative h-48 w-full overflow-hidden bg-zinc-950">
+                            <img src="${item.image}" 
+                                 alt="${item.name}"
+                                 onerror="this.src='https://placehold.co/400x300/27272A/F59E0B?text=${encodeURIComponent(item.name)}'"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                            ${item.badge ? `
+                                <div class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md shadow-md">
+                                    ${item.badge}
+                                </div>
+                            ` : ''}
+
+                            <div class="absolute bottom-2 right-2 bg-black/75 backdrop-blur-sm text-brand-amber text-xs font-semibold px-2 py-0.5 rounded-lg flex items-center gap-1">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span>${item.rating}</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-5">
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <h3 class="font-heading font-bold text-white text-lg group-hover:text-brand-amber transition-colors">${item.name}</h3>
+                            </div>
+                            <span class="inline-block text-[11px] font-medium text-brand-saffron bg-brand-saffron/10 px-2 py-0.5 rounded mb-2">
+                                <i class="fa-solid fa-pepper-hot text-[10px]"></i> ${item.spice}
+                            </span>
+                            <p class="text-xs text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                                ${item.description}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Bar -->
+                    <div class="px-5 pb-5 pt-2 border-t border-zinc-800/80 flex items-center justify-between mt-auto">
+                        <div>
+                            <span class="text-xs text-zinc-400 block font-medium">Price</span>
+                            <span class="text-xl font-heading font-extrabold text-white">₹${item.price}</span>
+                        </div>
+                        <button onclick="addToCart('${item.name}', ${item.price}, '${item.id}')" 
+                                class="bg-zinc-800 hover:bg-brand-saffron text-zinc-100 hover:text-white px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 border border-zinc-700 hover:border-transparent">
+                            <i class="fa-solid fa-plus"></i> Add
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filter Category
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-brand-saffron text-white transition-all shadow-md";
+                } else {
+                    btn.className = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-zinc-800 text-zinc-300 hover:text-white transition-all";
+                }
+            });
+            renderMenu(cat);
+        }
+
+        // Cart Operations
+        function addToCart(name, price, id) {
+            if (cart[name]) {
+                cart[name].qty += 1;
+            } else {
+                cart[name] = { price: price, qty: 1 };
+            }
+            updateCartUI();
+            
+            // Brief visual notification on button tap
+            showNotification(`Added ${name} to plate!`);
+        }
+
+        function updateCartItem(name, delta) {
+            if (cart[name]) {
+                cart[name].qty += delta;
+                if (cart[name].qty <= 0) {
+                    delete cart[name];
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const badge = document.getElementById('cart-badge-count');
+            const mobileBadge = document.getElementById('mobile-cart-badge');
+
+            container.innerHTML = '';
+            let total = 0;
+            let totalCount = 0;
+
+            const itemNames = Object.keys(cart);
+
+            if (itemNames.length === 0) {
+                container.innerHTML = `
+                    <div class="h-64 flex flex-col items-center justify-center text-zinc-500 text-center space-y-3">
+                        <i class="fa-solid fa-plate-wheat text-4xl text-zinc-700"></i>
+                        <p class="text-sm">Your plate is empty.<br>Add some delicious Cholle Bhature!</p>
+                    </div>
+                `;
+            } else {
+                itemNames.forEach(name => {
+                    const item = cart[name];
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    totalCount += item.qty;
+
+                    const row = document.createElement('div');
+                    row.className = "flex items-center justify-between bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl";
+                    row.innerHTML = `
+                        <div class="pr-2">
+                            <h4 class="text-sm font-bold text-white leading-tight">${name}</h4>
+                            <span class="text-xs text-brand-amber font-medium">₹${item.price} x ${item.qty} = ₹${itemTotal}</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-zinc-800 p-1 rounded-lg border border-zinc-700">
+                            <button onclick="updateCartItem('${name}', -1)" class="w-6 h-6 rounded flex items-center justify-center text-xs text-zinc-300 hover:text-white hover:bg-zinc-700">-</button>
+                            <span class="text-xs font-bold text-white px-1">${item.qty}</span>
+                            <button onclick="updateCartItem('${name}', 1)" class="w-6 h-6 rounded flex items-center justify-center text-xs text-zinc-300 hover:text-white hover:bg-zinc-700">+</button>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+
+            subtotalEl.innerText = `₹${total}`;
+            badge.innerText = totalCount;
+            mobileBadge.innerText = totalCount;
+        }
+
+        // WhatsApp Order Generator
+        function checkoutWhatsApp() {
+            const itemNames = Object.keys(cart);
+            if (itemNames.length === 0) {
+                showNotification("Please select items to order first!");
+                return;
+            }
+
+            let message = `*NEW ORDER - Sri Gopal Ji Cholle Bhature & Fast Food*%0A%0A`;
+            let total = 0;
+
+            itemNames.forEach((name, index) => {
+                const item = cart[name];
+                const cost = item.price * item.qty;
+                total += cost;
+                message += `${index + 1}. *${name}* x ${item.qty} = ₹${cost}%0A`;
+            });
+
+            message += `%0A*Total Bill:* ₹${total}%0A`;
+            message += `*Order Type:* Takeaway / Home Delivery%0A%0A`;
+            message += `Please confirm my order and approximate preparation time.`;
+
+            const waLink = `https://wa.me/${RESTAURANT_CONFIG.whatsappNumber}?text=${message}`;
+            window.open(waLink, '_blank');
+        }
+
+        // Simple notification banner
+        function showNotification(text) {
+            let note = document.getElementById('app-notification');
+            if (!note) {
+                note = document.createElement('div');
+                note.id = 'app-notification';
+                note.className = 'fixed top-24 right-4 z-50 bg-brand-saffron text-white text-xs font-bold px-4 py-3 rounded-xl shadow-xl transition-all duration-300 transform translate-y-[-20px] opacity-0 pointer-events-none flex items-center gap-2';
+                document.body.appendChild(note);
+            }
+            note.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${text}</span>`;
+            note.classList.remove('translate-y-[-20px]', 'opacity-0');
+            note.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                note.classList.add('translate-y-[-20px]', 'opacity-0');
+            }, 2200);
+        }
+
+        // Toggle Drawer
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.add('opacity-100');
+            } else {
+                drawer.classList.remove('opacity-100');
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // Toggle Mobile Navigation
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+
+        // Initial Initialization on Window Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu('all');
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
